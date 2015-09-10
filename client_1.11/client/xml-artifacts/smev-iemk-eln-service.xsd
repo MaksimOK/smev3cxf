@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn://iemk-rosminzdrav-ru/integration/services/eln/0.0.1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <xs:annotation>
+        <xs:documentation>Электронный лист нетрудоспособности</xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="GetPatientDocumentsRequest">
+        <xs:annotation>
+            <xs:documentation>Запрос на листы нетрудоспособности</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Имя</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Surname" type="xs:string" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Фамилия</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Patronymic" type="xs:string" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Отчество</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Snils" type="xs:string" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Снилс</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="From" type="xs:date" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Дата начиная с которой нужны документы</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="To" type="xs:date" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Дата по которую нужны документы</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetPatientDocumentsResponse">
+        <xs:annotation>
+            <xs:documentation>Ответ на запрос листов нетрудоспособности</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Snils" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Снилс</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="DocumentCount" type="xs:int">
+                    <xs:annotation>
+                        <xs:documentation>Количество документов</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+	
